@@ -58,6 +58,8 @@ define Package/ftdi_eeprom/description
   read. Otherwise, you will still get the old values.
 endef
 
+CMAKE_OPTIONS += -DPYTHON_BINDINGS:BOOL=OFF
+
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/usr/include/libftdi1/
 	$(CP) $(PKG_INSTALL_DIR)/usr/include/libftdi1/ftdi.h $(1)/usr/include/libftdi1/
